@@ -7,10 +7,10 @@
  *
  */
 public class Serie implements Entregable {
-	
+
 	private final int TEMPORADAS = 3;
 	private final boolean ENTREGADO = false;
-	
+
 	private String titulo;
 	private int temporadas;
 	private boolean entregado;
@@ -110,34 +110,35 @@ public class Serie implements Entregable {
 
 	@Override
 	public String toString() {
-		return "Serie [titulo=" + titulo + ", temporadas=" + temporadas + ", entregado=" + entregado + ", genero="
-				+ genero + ", creador=" + creador + "]";
+		return "\nInformación de la Serie\n" + "Titulo: " + titulo + "\nTemporadas: " + temporadas + "\nGenero: " + genero
+				+ "\nCreador: " + creador + "\nEntregado: " + entregado;
 	}
 
 	@Override
 	public void entregar() {
-		this.entregado = true;
+		this.entregado = true; // Ponemos el metodo entregar para que la variable entregado sea true
 
 	}
 
 	@Override
 	public void devolver() {
-		this.entregado = false;
+		this.entregado = false;// Ponemos el metodo entregar para que la variable entregado sea false
 
 	}
 
 	@Override
 	public boolean isEntregado() {
-		return this.entregado;
+		return this.entregado; // Devuelve el estado de entregado
 
 	}
 
 	@Override
 	public boolean compareTo(Object a) {
-		if (this.temporadas < (int) a) {
-			return true;
+		if (this.temporadas < (int) a) { // Comprueba si el numero de temporadas es mas pequeño que el anterior mas
+											// grande pasado por parametro
+			return true; // Si es mas grande devuelve true
 		} else {
-			return false;
+			return false; // Si es mas pequeño false
 		}
 	}
 }
